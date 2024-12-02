@@ -19,23 +19,23 @@ public class TodoController {
     }
 
     @GetMapping
-    private List<Todo> getAllTodos() {
+    public List<Todo> getAllTodos() {
         return todoService.getAllTodos();
     }
 
     @DeleteMapping("/{id}")
-    private void deleteTodo(@PathVariable Integer id) {
+    public void deleteTodo(@PathVariable Integer id) {
         todoService.deleteTodo(id);
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    private Todo createTodo(@RequestBody Todo todo) {
+    public Todo createTodo(@RequestBody Todo todo) {
         return todoService.createTodo(todo);
     }
 
     @PutMapping("/{id}")
-    private Todo updateTodo(@PathVariable Integer id, @RequestBody Todo todo) {
+    public Todo updateTodo(@PathVariable Integer id, @RequestBody Todo todo) {
         return todoService.updateTodo(id, todo);
     }
 

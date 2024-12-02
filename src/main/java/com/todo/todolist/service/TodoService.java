@@ -9,7 +9,7 @@ import java.util.List;
 @Service
 public class TodoService {
 
-    final private TodoRepository todoRepository;
+    private final TodoRepository todoRepository;
 
     public TodoService(TodoRepository todoRepository) {
         this.todoRepository = todoRepository;
