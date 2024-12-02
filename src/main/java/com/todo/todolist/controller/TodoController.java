@@ -3,10 +3,7 @@ package com.todo.todolist.controller;
 
 import com.todo.todolist.entity.Todo;
 import com.todo.todolist.service.TodoService;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,7 +18,12 @@ public class TodoController {
     }
 
     @GetMapping
-    private List<Todo> getAllTodo() {
-        return todoService.getAllTodo();
+    private List<Todo> getAllTodos() {
+        return todoService.getAllTodos();
+    }
+
+    @DeleteMapping("/{id}")
+    private void deleteTodo(@PathVariable Integer id) {
+        todoService.deleteTodo(id);
     }
 }

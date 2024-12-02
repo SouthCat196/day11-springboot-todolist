@@ -15,8 +15,11 @@ public class TodoService {
         this.todoRepository = todoRepository;
     }
 
-    public List<Todo> getAllTodo() {
+    public List<Todo> getAllTodos() {
         return todoRepository.findAll();
     }
 
+    public void deleteTodo(Integer id) {
+        todoRepository.deleteById(id);
+    }
 }
