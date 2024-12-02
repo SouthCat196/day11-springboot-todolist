@@ -30,8 +30,13 @@ public class TodoController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Todo addCompany(@RequestBody Todo todo) {
+    private Todo createTodo(@RequestBody Todo todo) {
         return todoService.createTodo(todo);
+    }
+
+    @PutMapping("/{id}")
+    private Todo updateTodo(@PathVariable Integer id, @RequestBody Todo todo) {
+        return todoService.updateTodo(id, todo);
     }
 
 }
