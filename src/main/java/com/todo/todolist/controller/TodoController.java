@@ -3,6 +3,7 @@ package com.todo.todolist.controller;
 
 import com.todo.todolist.entity.Todo;
 import com.todo.todolist.service.TodoService;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,4 +27,11 @@ public class TodoController {
     private void deleteTodo(@PathVariable Integer id) {
         todoService.deleteTodo(id);
     }
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public Todo addCompany(@RequestBody Todo todo) {
+        return todoService.createTodo(todo);
+    }
+
 }
