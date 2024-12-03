@@ -1,7 +1,6 @@
 package com.todo.todolist.controller;
 
 import com.todo.todolist.entity.Todo;
-import com.todo.todolist.exception.NotFoundException;
 import com.todo.todolist.repository.TodoRepository;
 import org.assertj.core.api.AssertionsForClassTypes;
 import org.junit.jupiter.api.BeforeEach;
